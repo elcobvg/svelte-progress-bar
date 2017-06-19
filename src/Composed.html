@@ -1,0 +1,41 @@
+<ProgressBar
+	width={{width}}
+	hiding={{hiding}}
+	color={{color}}
+/>
+
+<script>
+import ProgressBar from './ProgressBar.html'
+import increment from './increment.js'
+
+let motion
+
+export default {
+	components: { ProgressBar },
+	oncreate() {
+		motion = increment(this.get('options'), (width, hiding) => {
+			this.set({ width, hiding })
+		})
+	},
+	ondestroy() {
+		motion.destroy()
+	},
+	methods: {
+		start() {
+			motion.start()
+		},
+		reset() {
+			motion.reset()
+		},
+		continue() {
+			motion.continue()
+		},
+		stop() {
+			motion.stop()
+		},
+		complete() {
+			motion.complete()
+		}
+	}
+}
+</script>

@@ -1,0 +1,26 @@
+{{#if width}}
+<div
+	class="svelte-progress-bar {{barClass}}"
+	style="width: {{width}}%; {{barColorStyle}}"
+>
+	{{#if width !== 100}}
+	<div class="svelte-progress-bar-leader" style="{{leaderColorStyle}}"></div>
+	{{/if}}
+</div>
+{{/if}}
+
+<script>
+export default {
+	computed: {
+		barClass(hiding) {
+			return hiding ? 'svelte-progress-bar-hiding' : ''
+		},
+		barColorStyle(color) {
+			return color && `background-color: ${color};` || ''
+		},
+		leaderColorStyle(color) {
+			return color && `background-color: ${color}; color: ${color};` || ''
+		}
+	}
+}
+</script>
