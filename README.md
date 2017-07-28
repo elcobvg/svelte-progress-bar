@@ -1,5 +1,7 @@
 # svelte-progress-bar
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/saibotsivad/svelte-progress-bar.svg)](https://greenkeeper.io/)
+
 The idea is a little Svelte component that shows a cool progress bar, like
 what's on YouTube, or [this cool thing](http://ricostacruz.com/nprogress).
 
